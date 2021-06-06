@@ -4,11 +4,11 @@ import axios from 'axios';
 import {useHistory} from 'react-router-dom' 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blog, isPending } = useFetch("https://strapi-app-2021.herokuapp.com/" + id);
+    const { data: blog, isPending } = useFetch("https://strapi-app-2021.herokuapp.com/blogs/" + id);
     const history = useHistory();
     const handleClick = () => {
         axios
-            .delete('https://strapi-app-2021.herokuapp.com/' + blog.id)
+            .delete('https://strapi-app-2021.herokuapp.com/blogs/' + blog.id)
             .then(response => {
                 history.push('/');
             });

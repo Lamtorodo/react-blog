@@ -10,7 +10,7 @@ const Create = () => {
         e.preventDefault();
         const blog = { title, body, author };
         axios
-            .post('https://strapi-app-2021.herokuapp.com/', blog)
+            .post('https://strapi-app-2021.herokuapp.com/blogs', blog)
             .then(response => {
                 history.push('/');
             });
