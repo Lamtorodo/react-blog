@@ -1,4 +1,4 @@
-import useFetch from 'react-fetch-hook';
+import useFetch from './useFetch';
 import BlogList from './BlogList'
 
 const Home = () => {

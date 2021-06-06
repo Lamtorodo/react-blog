@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react'
 const useFetch = (url) => {
-const [data, setBlogs] = useState(null)
-const [isPending, setIsPending] = useState(true)
+    const [data, setBlogs] = useState(null)
+    const [isPending, setIsPending] = useState(true)
+    const abortControl = new AbortController();
     useEffect(() => {
-        fetch(url).then(
+        fetch(url, {signal:abortControl.signal}).then(
             res => {
                 return res.json()
             })
             .then(data => {
-                console.log(data)
                 setBlogs(data)
                 setIsPending(false)
             })
+        return () => abortControl.abort();
     }, [url])
-    return {data , isPending};
+    return { data, isPending };
 };
 
 export default useFetch;
