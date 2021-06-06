@@ -2,7 +2,7 @@ import useFetch from './useFetch';
 import BlogList from './BlogList'
 
 const Home = () => {
-    const { data, isPending } = useFetch("http://localhost:1337/blogs");
+    const { data, isPending } = useFetch("https://strapi-app-2021.herokuapp.com/blogs");
     return (
         <div className="home">
             {isPending && <div>Loading ...</div>}
