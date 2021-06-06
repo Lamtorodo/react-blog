@@ -14,6 +14,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/react-blog">
+              <Home />
+            </Route>
             <Route path="/create">
               <Create/>
             </Route>
